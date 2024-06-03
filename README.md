@@ -7,7 +7,7 @@ Neste documento você encontra a relação de requisitos do projeto da 2ª Ediç
 A API deve garantir:
 
 - [ ] Garantir que a API tenha um código limpo e de fácil manutenção
-- [ ] Garantir que a API tenha uma forma ágil de acesso ao banco de dados
+- [x] Garantir que a API tenha uma forma ágil de acesso ao banco de dados
 - [ ] Garantir que a API tenha um tratamento de erros
 - [ ] Garantir que a API não pare quando algum erro for retornado
 - [ ] Garantir que a API valide qualquer payload recebido
@@ -38,18 +38,18 @@ A API deve ter os seguintes casos de uso:
 
 ### Tabelas do sistema
 
-- [ ] Patient _Paciente_
+- [x] Patient _Paciente_
   - _Campos: ID, UserID, Name, Phone, CreatedAt_
   - _Relações: Appointments[], User_
-- [ ] User
+- [x] User
   - _Campos: ID, Phone, Password, CreatedAt_
   - _Relações: Patient_
-- [ ] Appointment
+- [x] Appointment
   - _Campos: ID, Date, Made, PatientID, DoctorID, CreatedAt_
   - _Relações: Patient, Doctor_
-- [ ] Doctor
+- [x] Doctor
   - _Campos: ID, FirstName, LastName, City, State, Speciality, Bio, Picture, Price, Availability, Experience, Attendances, Address, CreatedAt_
   - _Relações: Agenda, Appointment_
-- [ ] Agenda
+- [x] Agenda
   - _Campos: ID, Date, Available, DoctorID, CreatedAt_
   - _Relações: Doctor_
