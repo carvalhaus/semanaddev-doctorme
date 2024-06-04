@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { resourceUsage } from "process";
 
 export default class DatabaseService {
   constructor(readonly connection: PrismaClient) {}
@@ -17,10 +18,29 @@ export default class DatabaseService {
     });
   }
 
-  getPatientByPhone(phone: string, includeAppointment: boolean) {
+  getPatientByPhone(phone: string, includeAppointment: boolean = false) {
     return this.connection.patient.findUnique({
       where: { phone },
-      include: {appointment: includeAppointment}
+      include: { appointment: includeAppointment },
+    });
+  }
+
+  createUser(phone: string, password: string) {
+    return this.connection.user.create({
+      data: {
+        phone,
+        password,
+      },
+    });
+  }
+
+  createPatient(name: string, phone: string, userId: number) {
+    return this.connection.patient.create({
+      data: {
+        name,
+        phone,
+        userId,
+      },
     });
   }
 }

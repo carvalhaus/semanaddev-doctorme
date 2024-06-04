@@ -20,12 +20,12 @@ A API deve ter os seguintes casos de uso:
   - [ ] Incluir no retorno a agenda de cada médico
 - [x] Obter dados do médico
   - [ ] Garantir que o ID de um médico foi enviado na chamada - Request
-  - [ ] Garantir que o ID do médico eiste
+  - [x] Garantir que o ID do médico existe
   - [x] Retornar os dados do médico com a agenda
 - [x] Obter dados do paciente
   - [ ] Garantir o acesso somente a usuários autenticados - Request
-  - [ ] Garantir que o Telefone de um paciente foi enviado na chamada - Requesrt
-  - [ ] Garantir que o Telefone é de um paciente que eiste
+  - [ ] Garantir que o Telefone de um paciente foi enviado na chamada - Request
+  - [x] Garantir que o Telefone é de um paciente que existe
   - [x] Incluir no retorno os agendamentos
 - [ ] Criar conta do paciente
   - [ ] Criar conta com nome, telefone e senha
