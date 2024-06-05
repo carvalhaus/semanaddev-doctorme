@@ -1,4 +1,5 @@
 import DatabaseService from "@/infra/DatabaseService";
+import { hashPassword } from "@/infra/helpers/SecurityHelper";
 
 export default class CreatePatientUseCase {
   constructor(readonly database: DatabaseService) {}
