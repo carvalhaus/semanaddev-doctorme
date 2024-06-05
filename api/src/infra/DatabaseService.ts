@@ -9,7 +9,7 @@ export default class DatabaseService {
     return this.connection.doctor.findMany();
   }
 
-  getDoctorById(id: number, includeAgenda: boolean) {
+  getDoctorById(id: number, includeAgenda: boolean = false) {
     return this.connection.doctor.findUnique({
       where: { id },
       include: {
