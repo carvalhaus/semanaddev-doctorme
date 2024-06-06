@@ -2,7 +2,6 @@ import "express-async-errors";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import DoctorControllerImpl from "@/infra/controller/DoctorController";
 import DoctorController from "@/application/controller/DoctorController";
 import PatientController from "@/application/controller/PatientController";
 
@@ -29,6 +28,10 @@ export default class Router {
 
     this.app.get("/doctors", this.doctorController.listDoctor);
     this.app.post("/patient", this.patientController.createPatient);
+    this.app.post(
+      "/patient/:patientId/appointment",
+      this.patientController.createAppointment
+    );
   }
 
   public start(port: number) {
