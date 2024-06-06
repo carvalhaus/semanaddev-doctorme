@@ -4,6 +4,19 @@ import cors from "cors";
 import helmet from "helmet";
 import DoctorController from "@/application/controller/DoctorController";
 import PatientController from "@/application/controller/PatientController";
+import {
+  validateBody,
+  validateParams,
+  isAuthenticated,
+} from "@/infra/ValidationMiddleware";
+import {
+  authenticationSchema,
+  createAppointmentAgendaIdSchema,
+  createPatientPatientIdSchema,
+  getDoctorByIdSchema,
+  getPatientByPhoneSchema,
+} from "@/infra/ValidationSchemas";
+import { errorHandling } from "@/infra/helpers/ErrorHandling";
 
 export default class Router {
   app: express.Express;
@@ -18,18 +31,37 @@ export default class Router {
     this.app.use(express.json());
 
     this.setRoutes();
+    this.app.use(errorHandling);
   }
 
   private setRoutes() {
-    //rotas da aplicacao
     this.app.get("/", (req, res) => {
       res.send("Hello");
     });
 
+    this.app.post(
+      "/authenticate",
+      validateBody(authenticationSchema),
+      this.patientController.authenticate
+    );
     this.app.get("/doctors", this.doctorController.listDoctor);
+    this.app.get(
+      "/doctor/:id",
+      validateParams(getDoctorByIdSchema),
+      this.doctorController.getDoctorById
+    );
     this.app.post("/patient", this.patientController.createPatient);
+    this.app.get(
+      "/patient/:phone",
+      isAuthenticated,
+      validateParams(getPatientByPhoneSchema),
+      this.patientController.getPatientByPhone
+    );
     this.app.post(
       "/patient/:patientId/appointment",
+      isAuthenticated,
+      validateParams(createPatientPatientIdSchema),
+      validateBody(createAppointmentAgendaIdSchema),
       this.patientController.createAppointment
     );
   }

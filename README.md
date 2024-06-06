@@ -6,25 +6,25 @@ Neste documento você encontra a relação de requisitos do projeto da 2ª Ediç
 
 A API deve garantir:
 
-- [ ] Garantir que a API tenha um código limpo e de fácil manutenção
+- [x] Garantir que a API tenha um código limpo e de fácil manutenção
 - [x] Garantir que a API tenha uma forma ágil de acesso ao banco de dados
-- [ ] Garantir que a API tenha um tratamento de erros
-- [ ] Garantir que a API não pare quando algum erro for retornado
-- [ ] Garantir que a API valide qualquer payload recebido
+- [x] Garantir que a API tenha um tratamento de erros
+- [x] Garantir que a API não pare quando algum erro for retornado
+- [x] Garantir que a API valide qualquer payload recebido
 - [x] Garantir que a API armazene senhas seguras
-- [ ] Garantir que a API isole as operações por casos de uso
+- [x] Garantir que a API isole as operações por casos de uso
 
 A API deve ter os seguintes casos de uso:
 
 - [x] Listar médicos
-  - [ ] Incluir no retorno a agenda de cada médico
+  - [x] Incluir no retorno a agenda de cada médico
 - [x] Obter dados do médico
-  - [ ] Garantir que o ID de um médico foi enviado na chamada - Request
+  - [x] Garantir que o ID de um médico foi enviado na chamada - Request
   - [x] Garantir que o ID do médico existe
   - [x] Retornar os dados do médico com a agenda
 - [x] Obter dados do paciente
-  - [ ] Garantir o acesso somente a usuários autenticados - Request
-  - [ ] Garantir que o Telefone de um paciente foi enviado na chamada - Request
+  - [x] Garantir o acesso somente a usuários autenticados - Request
+  - [x] Garantir que o Telefone de um paciente foi enviado na chamada - Request
   - [x] Garantir que o Telefone é de um paciente que existe
   - [x] Incluir no retorno os agendamentos
 - [x] Criar conta do paciente
@@ -33,7 +33,7 @@ A API deve ter os seguintes casos de uso:
 - [x] Fazer login do paciente
   - [x] Garantir que o telefone é de um cadastro válido
 - [x] Adicionar agendamento para o paciente
-  - [ ] Garantir que foi enviado o paciente e o id de agenda disponível - Request
+  - [x] Garantir que foi enviado o paciente e o id de agenda disponível - Request
   - [x] Garantir que a agenda está disponível
 
 ### Tabelas do sistema
@@ -48,7 +48,7 @@ A API deve ter os seguintes casos de uso:
   - _Campos: ID, Date, Made, PatientID, DoctorID, CreatedAt_
   - _Relações: Patient, Doctor_
 - [x] Doctor
-  - _Campos: ID, FirstName, LastName, City, State, Speciality, Bio, Picture, Price, Availability, Experience, Attendances, Address, CreatedAt_
+  - _Campos: ID, FirstName, LastName, City, State, Specialty, Bio, Picture, Price, Availability, Experience, Attendances, Address, CreatedAt_
   - _Relações: Agenda, Appointment_
 - [x] Agenda
   - _Campos: ID, Date, Available, DoctorID, CreatedAt_
