@@ -11,7 +11,7 @@ A API deve garantir:
 - [ ] Garantir que a API tenha um tratamento de erros
 - [ ] Garantir que a API não pare quando algum erro for retornado
 - [ ] Garantir que a API valide qualquer payload recebido
-- [ ] Garantir que a API armazene senhas seguras
+- [x] Garantir que a API armazene senhas seguras
 - [ ] Garantir que a API isole as operações por casos de uso
 
 A API deve ter os seguintes casos de uso:
@@ -30,11 +30,11 @@ A API deve ter os seguintes casos de uso:
 - [x] Criar conta do paciente
   - [x] Criar conta com nome, telefone e senha
   - [x] Garantir somente um usuário por telefone
-- [ ] Fazer login do paciente
-  - [ ] Garantir que o telefone é de um cadastro válido
-- [ ] Adicionar agendamento para o paciente
+- [x] Fazer login do paciente
+  - [x] Garantir que o telefone é de um cadastro válido
+- [x] Adicionar agendamento para o paciente
   - [ ] Garantir que foi enviado o paciente e o id de agenda disponível - Request
-  - [ ] Garantir que a agenda está disponível
+  - [x] Garantir que a agenda está disponível
 
 ### Tabelas do sistema
 
